@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: postgres-pod
+  labels:
+    app: voting-app
+    service: postgres
+    type: backend
+spec:
+  containers:
+  - name: db
+    image: postgres:12.11-alpine
+    env:
+      - name: POSTGRES_PASSWORD
+        value: postgres
+      - name: POSTGRES_USER
+        value: postgres
